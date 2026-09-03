@@ -28,7 +28,7 @@ npm install
 ```
 node server.js
 ```
-El servidor se ejecutará en: http://localhost:3000
+El servidor se ejecutará en: ```http://localhost:3000```
 
 
 
