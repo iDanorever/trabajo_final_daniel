@@ -33,6 +33,7 @@ El servidor se ejecutará en: http://localhost:3000
 
 
 ## 📋 Endpoints disponibles
+
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
 | GET | `/api/viajes` | Obtiene lista de viajes |
@@ -40,6 +41,7 @@ El servidor se ejecutará en: http://localhost:3000
 
 
 ## 📁 Estructura del proyecto
+
 ```
 viajes-dashboard/
 ├── node_modules/
