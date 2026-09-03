@@ -31,7 +31,18 @@ node server.js
 El servidor se ejecutará en: http://localhost:3000
 
 
+
 📋 Endpoints disponibles
-|Método	|Endpoint	|Descripción
-|GET	|/api/viajes	|Obtiene lista de viajes
-|GET	|/api/dashboard	|Obtiene datos del dashboard
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/viajes` | Obtiene lista de viajes |
+| GET | `/api/dashboard` | Obtiene datos del dashboard |
+
+```
+viajes-dashboard/
+├── node_modules/
+├── public/
+├── server.js          # Servidor principal
+├── package.json
+└── README.md
+```
