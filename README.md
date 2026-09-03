@@ -24,6 +24,7 @@ npm install
 ```
 
 ## 3. Iniciar el servidor
+
 ```
 node server.js
 ```
