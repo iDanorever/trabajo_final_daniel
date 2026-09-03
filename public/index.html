@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Viajes Horizonte - Club de Aviación &amp; Gestión Turística</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "parchment": "#F5F0E8",
+            "parchment-card": "#FAF7F2",
+            "navy-deep": "#1A2A3A",
+            "navy-night": "#0F1A2A",
+            "gold-champagne": "#C9A96E",
+            "gold-hover": "#b89555",
+            "steel-blue": "#4A6B8A",
+            "pearl-gray": "#8DA4B0",
+            "silver-gray": "#4A5A6A",
+            "parchment-border": "#EAE3D6",
+          },
+          fontFamily: {
+            sans: ["'Plus Jakarta Sans'", "sans-serif"],
+            serif: ["'Cormorant Garamond'", "Georgia", "serif"]
+          },
+          boxShadow: {
+            aviator: "0 8px 24px rgba(26, 42, 58, 0.08)",
+            "aviator-hover": "0 12px 32px rgba(26, 42, 58, 0.12)",
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #F5F0E8;
+        color: #0F1A2A;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F5F0E8] text-[#0F1A2A] antialiased font-sans selection:bg-[#C9A96E]/30 selection:text-[#0F1A2A]">
+<!-- Encabezado Superior: Fondo #1A2A3A (Azul Marino Profundo) -->
+<header class="fixed top-0 left-0 right-0 h-20 bg-[#1A2A3A] text-white shadow-lg border-b border-[#C9A96E]/20 z-50">
+<div class="h-20 w-full px-8 flex items-center justify-between">
+<!-- Marca / Logotipo estilo Aviador Vintage Clásico -->
+<div class="flex items-center gap-4">
+<div class="h-11 w-11 rounded-xl bg-[#0F1A2A] border border-[#C9A96E]/40 flex items-center justify-center text-[#C9A96E] shadow-inner">
+<span class="material-symbols-outlined text-2xl">connecting_airports</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-serif font-bold text-2xl text-[#F5F0E8] tracking-wide leading-none">Viajes Horizonte</span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C9A96E] px-1.5 py-0.5 rounded border border-[#C9A96E]/30 bg-[#C9A96E]/10">1928</span>
+</div>
+<span class="text-[11px] uppercase tracking-[0.16em] text-[#8DA4B0] font-medium mt-1">Club de Aviación &amp; Concierge de Lujo</span>
+</div>
+</div>
+<!-- Barra de Saludo y Perfil -->
+<div class="flex items-center gap-6">
+<div class="hidden md:flex flex-col text-right">
+<span class="font-serif text-lg font-semibold text-[#F5F0E8] leading-tight">Hola, Sofía</span>
+<span class="text-xs text-[#8DA4B0] tracking-wide">Jueves, 24 de Octubre, 2024</span>
+</div>
+<div class="h-9 w-px bg-[#C9A96E]/20 hidden md:block"></div>
+<button aria-label="Notificaciones" class="relative p-2 rounded-xl text-[#8DA4B0] hover:text-[#C9A96E] hover:bg-white/5 transition-colors" type="button">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#C9A96E] ring-2 ring-[#1A2A3A]"></span>
+</button>
+<!-- Botón de Acción Principal en Cabecera -->
+<button class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#C9A96E] text-[#1A2A3A] font-bold text-xs uppercase tracking-wider hover:bg-[#b89555] active:scale-[0.98] transition-all shadow-[0_4px_14px_rgba(201,169,110,0.35)]" type="button">
+<span class="material-symbols-outlined text-base font-black">flight_takeoff</span>
+<span class="">+ Nueva Reserva</span>
+</button>
+<!-- Avatar con aro fino dorado -->
+<div class="relative">
+<img src="professional_avatar_headshot_of_an_executive_travel_agency_agent_smiling_woman.png" alt="Perfil de Sofía" class="w-11 h-11 rounded-full object-cover ring-2 ring-[#C9A96E] ring-offset-2 ring-offset-[#1A2A3A] shadow-md" src="https://lh3.googleusercontent.com/aida/AEtjO1UymyQ_hmzrgG904hlSphuOPlQ3OsmmTaibH9HoEJx5r_PLP5toPC0P7HJUgBvoF0ePUh5lAc6D_vM81JsrXkq8wlvfFgfEoUbZKEm97PoA6e9Cg4TrKBMYHNHENp8dwVfOmmEV7VosY_kWi4-tlxeYQ7y5BkGu2ddBO9GQkEouRhlZFSAkbOo3LGJyabAuHKojauQ6HNZBkXrn06RUsXLTJMlhVBw5iDFEDcSguXfjBTyVozyNtpDJ9w"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 border-2 border-[#1A2A3A] rounded-full"></span>
+</div>
+</div>
+</div>
+</header>
+<!-- Barra Lateral Izquierda: #1A2A3A con acentos dorados y bordes sutiles -->
+<aside class="fixed left-0 top-20 h-[calc(100vh-5rem)] w-64 bg-[#1A2A3A] border-r border-[#C9A96E]/20 z-40 flex flex-col justify-between py-6">
+<div class="px-4 flex flex-col gap-1">
+<div class="px-3 pb-2 pt-1 border-b border-[#C9A96E]/15 mb-2 flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-[0.2em] text-[#8DA4B0] font-bold">Cuaderno de Vuelo</span>
+<span class="material-symbols-outlined text-[#C9A96E] text-sm">explore</span>
+</div>
+<nav class="flex flex-col gap-1.5">
+<a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 bg-[#C9A96E] text-[#1A2A3A] font-bold text-sm rounded-xl shadow-[0_4px_12px_rgba(201,169,110,0.25)] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+        Panel General
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">luggage</span>
+        Reservas
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">flight</span>
+        Flota &amp; Alojamientos
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+        Cartera Socios
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">travel_explore</span>
+        Cartografía &amp; Rutas
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">receipt_long</span>
+        Facturación
+      </a>
+</nav>
+</div>
+<div class="px-4 flex flex-col gap-1">
+<div class="px-3 pb-1 border-t border-[#C9A96E]/15 pt-3 mb-1">
+<span class="text-[10px] uppercase tracking-[0.2em] text-[#8DA4B0] font-bold">Cabina de Control</span>
+</div>
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">tune</span>
+        Preferencias
+      </a>
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-xl font-medium text-sm text-[#8DA4B0] hover:bg-white/5 hover:text-[#C9A96E] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+        Asistencia Especial
+      </a>
+<div class="mt-4 p-3 rounded-xl bg-[#0F1A2A] border border-[#C9A96E]/20 text-center">
+<span class="text-[10px] uppercase tracking-wider text-[#C9A96E] font-bold block">Club Horizonte Platinum</span>
+<span class="text-[11px] text-[#8DA4B0] mt-0.5 block">Matrícula: VH-8924</span>
+</div>
+</div>
+</aside>
+<!-- Área Principal: Fondo #F5F0E8 con tono cálido pergamino de aviación -->
+<div class="pl-64">
+<main class="w-full pt-24 px-8 pb-14 min-h-screen bg-[#F5F0E8]">
+<div class="flex flex-col w-full gap-7 max-w-7xl mx-auto">
+<!-- 1. Saludo / Contextual Header estilo Club de Aviación de Lujo -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-5 bg-white p-7 rounded-2xl shadow-aviator border border-[#EAE3D6] relative overflow-hidden">
+<div class="absolute right-0 top-0 w-48 h-full bg-gradient-to-l from-[#C9A96E]/5 to-transparent pointer-events-none"></div>
+<div class="flex flex-col gap-1.5 relative z-10">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-[#C9A96E]"></span>
+<span class="text-xs font-bold uppercase tracking-[0.18em] text-[#C9A96E]">Despacho de Aviación Comercial &amp; Privada</span>
+</div>
+<h1 class="font-serif text-3xl md:text-4xl font-bold text-[#0F1A2A] tracking-tight">Bitácora Ejecutiva • Sofía</h1>
+<p class="text-sm text-[#4A5A6A] max-w-2xl font-normal">
+              Jueves, 24 de Octubre, 2024 • Resumen operativo: la actividad comercial registra un incremento sostenido del 18% en rutas intercontinentales.
+            </p>
+</div>
+<div class="flex items-center gap-3 relative z-10">
+<div class="hidden xl:flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#FAF7F2] border border-[#EAE3D6]">
+<div class="w-8 h-8 rounded-lg bg-[#1A2A3A] text-[#C9A96E] flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">radar</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="text-[11px] text-[#4A5A6A] font-medium tracking-wide">Motor GDS &amp; Rutas</span>
+<span class="text-xs font-bold text-[#0F1A2A]">100% Operativo • Óptimo</span>
+</div>
+</div>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1A2A3A] text-[#F5F0E8] hover:bg-[#0F1A2A] border border-[#C9A96E]/30 font-semibold text-xs uppercase tracking-wider active:scale-[0.98] transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-base text-[#C9A96E]">cloud_download</span>
+              Exportar Reporte
+            </button>
+</div>
+</section>
+<!-- Separador limpio -->
+<div class="w-full h-px bg-[#E2E8F0]"></div>
+<!-- 2. Fila de 4 Tarjetas de KPIs (Fondo blanco, rounded-2xl, gap-6, borde superior dorado sutil, línea vertical de 4px a la izquierda y sombra suave) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+<!-- KPI 1: Viajes Vendidos -->
+<div class="flex flex-col justify-between p-6 bg-white rounded-2xl border-t-[3px] border-t-[#C9A96E] border-r border-b border-[#EAE3D6] transition-all duration-300 hover:translate-y-[-2px]" style="box-shadow: 0 8px 30px rgba(26, 42, 58, 0.12); border-left: 4px solid #4A6B8A;">
+<div class="flex items-center justify-between pb-2 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-[#C9A96E]">flight</span>
+<span class="text-xs uppercase tracking-[0.14em] font-bold text-[#4A5A6A]">Viajes Vendidos</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-[#FAF7F2] border border-[#EAE3D6] flex items-center justify-center text-[#1A2A3A]">
+<span class="material-symbols-outlined text-lg">confirmation_number</span>
+</div>
+</div>
+<div class="my-4">
+<span class="font-sans text-4xl font-extrabold text-[#1A2A3A] tracking-tight block">1,420</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-[#FAF7F2]">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#C9A96E]/15 text-[#1A2A3A] border border-[#C9A96E]/40">
+<span class="material-symbols-outlined text-xs text-[#C9A96E]">trending_up</span>+18.4%
+    </span>
+<span class="text-xs text-[#4A5A6A] font-medium">vs mes anterior</span>
+</div>
+</div>
+<!-- KPI 2: Ingresos del Mes -->
+<div class="flex flex-col justify-between p-6 bg-white rounded-2xl border-t-[3px] border-t-[#C9A96E] border-r border-b border-[#EAE3D6] transition-all duration-300 hover:translate-y-[-2px]" style="box-shadow: 0 8px 30px rgba(26, 42, 58, 0.12); border-left: 4px solid #C9A96E;">
+<div class="flex items-center justify-between pb-2 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-[#C9A96E]">paid</span>
+<span class="text-xs uppercase tracking-[0.14em] font-bold text-[#4A5A6A]">Ingresos del Mes</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-[#FAF7F2] border border-[#EAE3D6] flex items-center justify-center text-[#1A2A3A]">
+<span class="material-symbols-outlined text-lg">account_balance_wallet</span>
+</div>
+</div>
+<div class="my-4">
+<span class="font-sans text-4xl font-extrabold text-[#1A2A3A] tracking-tight block">$184,500</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-[#FAF7F2]">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#C9A96E]/15 text-[#1A2A3A] border border-[#C9A96E]/40">
+<span class="material-symbols-outlined text-xs text-[#C9A96E]">trending_up</span>+12.5%
+    </span>
+<span class="text-xs text-[#4A5A6A] font-medium">vs mes anterior</span>
+</div>
+</div>
+<!-- KPI 3: Pasajeros -->
+<div class="flex flex-col justify-between p-6 bg-white rounded-2xl border-t-[3px] border-t-[#C9A96E] border-r border-b border-[#EAE3D6] transition-all duration-300 hover:translate-y-[-2px]" style="box-shadow: 0 8px 30px rgba(26, 42, 58, 0.12); border-left: 4px solid #8DA4B0;">
+<div class="flex items-center justify-between pb-2 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-[#C9A96E]">person</span>
+<span class="text-xs uppercase tracking-[0.14em] font-bold text-[#4A5A6A]">Pasajeros</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-[#FAF7F2] border border-[#EAE3D6] flex items-center justify-center text-[#1A2A3A]">
+<span class="material-symbols-outlined text-lg">group</span>
+</div>
+</div>
+<div class="my-4">
+<span class="font-sans text-4xl font-extrabold text-[#1A2A3A] tracking-tight block">3,890</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-[#FAF7F2]">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#C9A96E]/15 text-[#1A2A3A] border border-[#C9A96E]/40">
+<span class="material-symbols-outlined text-xs text-[#C9A96E]">trending_up</span>+9.2%
+    </span>
+<span class="text-xs text-[#4A5A6A] font-medium">vs mes anterior</span>
+</div>
+</div>
+<!-- KPI 4: Destinos Populares -->
+<div class="flex flex-col justify-between p-6 bg-white rounded-2xl border-t-[3px] border-t-[#C9A96E] border-r border-b border-[#EAE3D6] transition-all duration-300 hover:translate-y-[-2px]" style="box-shadow: 0 8px 30px rgba(26, 42, 58, 0.12); border-left: 4px solid #1A2A3A;">
+<div class="flex items-center justify-between pb-2 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg text-[#C9A96E]">location_on</span>
+<span class="text-xs uppercase tracking-[0.14em] font-bold text-[#4A5A6A]">Destinos Populares</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-[#FAF7F2] border border-[#EAE3D6] flex items-center justify-center text-[#1A2A3A]">
+<span class="material-symbols-outlined text-lg">explore</span>
+</div>
+</div>
+<div class="my-4">
+<span class="font-sans text-4xl font-extrabold text-[#1A2A3A] tracking-tight block">28 <span class="text-base font-serif italic text-[#4A5A6A]">activos</span></span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-[#FAF7F2]">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#1A2A3A] text-[#C9A96E] border border-[#C9A96E]/30">
+<span class="material-symbols-outlined text-xs">star</span>Top: Cancún
+    </span>
+<span class="text-xs text-[#4A5A6A] font-medium">mayor demanda</span>
+</div>
+</div>
+</section>
+<!-- Separador limpio -->
+<div class="w-full h-px bg-[#E2E8F0]"></div>
+<!-- 3. Sección de Gráficos (Grid 12 cols: 7 cols y 5 cols) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Columna izquierda: Barras Horizontales - Ventas por Destino (7 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-between p-7 bg-white rounded-2xl shadow-aviator border border-[#EAE3D6]">
+<div>
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-serif text-2xl font-bold text-[#0F1A2A] tracking-tight">Ventas por Destino</h2>
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#1A2A3A] bg-[#F5F0E8] border border-[#EAE3D6] px-3 py-1 rounded-full">Octubre 2024</span>
+</div>
+<p class="text-xs text-[#4A5A6A] mb-6 font-normal">Volumen de reservas confirmadas este período en aerovías principales</p>
+</div>
+<div class="flex flex-col gap-4.5">
+<!-- Cancún (340) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-[#1A2A3A] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1A2A3A] ring-2 ring-[#C9A96E]"></span>
+<span class="font-semibold">Cancún</span>
+<span class="text-xs text-[#4A5A6A]">(CUN)</span>
+</span>
+<span class="font-bold text-[#0F1A2A]">340 <span class="text-xs font-normal text-[#4A5A6A]">viajes</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-[#F5F0E8] overflow-hidden p-0.5 border border-[#EAE3D6]">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1A2A3A] via-[#4A6B8A] to-[#C9A96E]" style="width: 100%;"></div>
+</div>
+</div>
+<!-- París (290) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-[#1A2A3A] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#4A6B8A]"></span>
+<span class="font-semibold">París</span>
+<span class="text-xs text-[#4A5A6A]">(CDG)</span>
+</span>
+<span class="font-bold text-[#0F1A2A]">290 <span class="text-xs font-normal text-[#4A5A6A]">viajes</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-[#F5F0E8] overflow-hidden p-0.5 border border-[#EAE3D6]">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1A2A3A] via-[#4A6B8A] to-[#C9A96E]" style="width: 85.3%;"></div>
+</div>
+</div>
+<!-- Roma (245) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-[#1A2A3A] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9A96E]"></span>
+<span class="font-semibold">Roma</span>
+<span class="text-xs text-[#4A5A6A]">(FCO)</span>
+</span>
+<span class="font-bold text-[#0F1A2A]">245 <span class="text-xs font-normal text-[#4A5A6A]">viajes</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-[#F5F0E8] overflow-hidden p-0.5 border border-[#EAE3D6]">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1A2A3A] via-[#4A6B8A] to-[#C9A96E]" style="width: 72.1%;"></div>
+</div>
+</div>
+<!-- Tokio (210) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-[#1A2A3A] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#8DA4B0]"></span>
+<span class="font-semibold">Tokio</span>
+<span class="text-xs text-[#4A5A6A]">(HND)</span>
+</span>
+<span class="font-bold text-[#0F1A2A]">210 <span class="text-xs font-normal text-[#4A5A6A]">viajes</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-[#F5F0E8] overflow-hidden p-0.5 border border-[#EAE3D6]">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1A2A3A] via-[#4A6B8A] to-[#C9A96E]" style="width: 61.8%;"></div>
+</div>
+</div>
+<!-- Nueva York (180) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-sm">
+<span class="font-medium text-[#1A2A3A] flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1A2A3A]"></span>
+<span class="font-semibold">Nueva York</span>
+<span class="text-xs text-[#4A5A6A]">(JFK)</span>
+</span>
+<span class="font-bold text-[#0F1A2A]">180 <span class="text-xs font-normal text-[#4A5A6A]">viajes</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-[#F5F0E8] overflow-hidden p-0.5 border border-[#EAE3D6]">
+<div class="h-full rounded-full bg-gradient-to-r from-[#1A2A3A] via-[#4A6B8A] to-[#C9A96E]" style="width: 52.9%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-[#EAE3D6] flex items-center justify-between text-xs text-[#4A5A6A] font-medium">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-[#C9A96E]">verified</span>
+              Total acumulado: 1,265 reservas en el Top 5
+            </span>
+<a class="text-[#1A2A3A] font-bold hover:text-[#C9A96E] hover:underline flex items-center gap-1 transition-colors" href="#">
+              Ver desglose completo <span class="text-sm">→</span>
+</a>
+</div>
+</div>
+<!-- Columna derecha: Gráfico Circular Donut - Distribución por Tipo (5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between p-7 bg-white rounded-2xl shadow-aviator border border-[#EAE3D6]">
+<div>
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-serif text-2xl font-bold text-[#0F1A2A] tracking-tight">Distribución por Tipo</h2>
+<span class="material-symbols-outlined text-[#C9A96E] text-2xl">pie_chart</span>
+</div>
+<p class="text-xs text-[#4A5A6A] mb-4 font-normal">Preferencia de los viajeros según plan de expedición</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 my-auto py-3">
+<!-- SVG Donut Chart con la paleta Aviador Clásico -->
+<div class="relative w-44 h-44 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 42 42">
+<!-- Fondo base -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#FAF7F2" stroke-width="5.5"></circle>
+<!-- Segmento 1: Playa 42% (#1A2A3A) -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#1A2A3A" stroke-dasharray="42 58" stroke-dashoffset="0" stroke-width="5.5"></circle>
+<!-- Segmento 2: Cultura 26% (#4A6B8A) -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#4A6B8A" stroke-dasharray="26 74" stroke-dashoffset="-42" stroke-width="5.5"></circle>
+<!-- Segmento 3: Aventura 18% (#C9A96E) -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#C9A96E" stroke-dasharray="18 82" stroke-dashoffset="-68" stroke-width="5.5"></circle>
+<!-- Segmento 4: Negocios 14% (#8DA4B0) -->
+<circle cx="21" cy="21" fill="transparent" r="15.91549430918954" stroke="#8DA4B0" stroke-dasharray="14 86" stroke-dashoffset="-86" stroke-width="5.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="font-serif text-3xl font-bold text-[#0F1A2A] leading-none">100%</span>
+<span class="text-[11px] font-semibold uppercase tracking-wider text-[#4A5A6A] mt-1">Demanda</span>
+</div>
+</div>
+<!-- Leyenda descriptiva -->
+<div class="flex flex-col gap-3 w-full sm:w-auto min-w-[140px]">
+<div class="flex items-center justify-between gap-4 pb-1 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#1A2A3A] ring-1 ring-[#C9A96E]/40"></span>
+<span class="text-sm font-medium text-[#1A2A3A]">Playa</span>
+</div>
+<span class="text-sm font-bold text-[#0F1A2A]">42%</span>
+</div>
+<div class="flex items-center justify-between gap-4 pb-1 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#4A6B8A]"></span>
+<span class="text-sm font-medium text-[#1A2A3A]">Cultura</span>
+</div>
+<span class="text-sm font-bold text-[#0F1A2A]">26%</span>
+</div>
+<div class="flex items-center justify-between gap-4 pb-1 border-b border-[#FAF7F2]">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#C9A96E]"></span>
+<span class="text-sm font-medium text-[#1A2A3A]">Aventura</span>
+</div>
+<span class="text-sm font-bold text-[#0F1A2A]">18%</span>
+</div>
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#8DA4B0]"></span>
+<span class="text-sm font-medium text-[#1A2A3A]">Negocios</span>
+</div>
+<span class="text-sm font-bold text-[#0F1A2A]">14%</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-[#EAE3D6] text-xs text-[#4A5A6A] text-center sm:text-left flex items-center justify-between">
+<span class="">Mayor afinidad hacia itinerarios costeros y experiencias privadas todo incluido.</span>
+<span class="material-symbols-outlined text-[#C9A96E] text-base">sailing</span>
+</div>
+</div>
+</section>
+<!-- Separador limpio -->
+<div class="w-full h-px bg-[#E2E8F0]"></div>
+<!-- 4. Tabla de Últimas Reservas -->
+<section class="flex flex-col bg-white p-7 rounded-2xl shadow-aviator border border-[#EAE3D6]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5">
+<div>
+<h2 class="font-serif text-2xl font-bold text-[#0F1A2A] tracking-tight">Últimas Reservas</h2>
+<p class="text-xs text-[#4A5A6A]">Detalle de transacciones emitidas recientemente</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-[#1A2A3A] bg-[#F5F0E8] border border-[#EAE3D6] px-3.5 py-1.5 rounded-full">5 registros procesados hoy</span>
+<button aria-label="Filtrar bitácora" class="inline-flex items-center p-2 rounded-xl text-[#4A5A6A] border border-[#EAE3D6] hover:bg-[#FAF7F2] hover:text-[#1A2A3A] transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">filter_alt</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-[#F5F0E8] text-[#1A2A3A] text-xs font-bold uppercase tracking-[0.14em] h-12 border-y border-[#EAE3D6]">
+<th class="px-5 rounded-l-xl font-bold">Cliente</th>
+<th class="px-5 font-bold">Destino</th>
+<th class="px-5 font-bold">Fecha</th>
+<th class="px-5 font-bold">Estado</th>
+<th class="px-5 text-right rounded-r-xl font-bold">Monto</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#EAE3D6]">
+<!-- Fila 1: Carlos Mendoza ($2,450) - Confirmada -->
+<tr class="h-16 hover:bg-[#FAF7F2] transition-colors">
+<td class="px-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#1A2A3A] text-[#C9A96E] flex items-center justify-center text-xs font-bold border border-[#C9A96E]/40">
+                    CM
+                  </div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-[#0F1A2A]">Carlos Mendoza</span>
+<span class="text-[11px] text-[#4A5A6A] tracking-wide">ID: #RES-8921</span>
+</div>
+</div>
+</td>
+<td class="px-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#C9A96E] text-xl">beach_access</span>
+<span class="text-sm font-medium text-[#1A2A3A]">Cancún (All Inclusive)</span>
+</div>
+</td>
+<td class="px-5">
+<span class="text-sm text-[#4A5A6A]">24 Oct 2024</span>
+</td>
+<td class="px-5">
+<!-- Badge Confirmada: verde suave / dorado oliva con punto verde oscuro -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#E8F4EC] text-[#1E5631] border border-[#C3DEC7]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1E5631]"></span>
+                  Confirmada
+                </span>
+</td>
+<td class="px-5 text-right">
+<span class="font-sans text-base font-extrabold text-[#0F1A2A]">$2,450</span>
+</td>
+</tr>
+<!-- Fila 2: Laura Gómez ($4,120) - Pendiente -->
+<tr class="h-16 hover:bg-[#FAF7F2] transition-colors">
+<td class="px-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#FAF7F2] text-[#1A2A3A] flex items-center justify-center text-xs font-bold border border-[#C9A96E]">
+                    LG
+                  </div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-[#0F1A2A]">Laura Gómez</span>
+<span class="text-[11px] text-[#4A5A6A] tracking-wide">ID: #RES-8920</span>
+</div>
+</div>
+</td>
+<td class="px-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#4A6B8A] text-xl">flight_takeoff</span>
+<span class="text-sm font-medium text-[#1A2A3A]">París &amp; Roma</span>
+</div>
+</td>
+<td class="px-5">
+<span class="text-sm text-[#4A5A6A]">23 Oct 2024</span>
+</td>
+<td class="px-5">
+<!-- Badge Pendiente: cálido suave con punto ámbar -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#FFF7E8] text-[#8C5810] border border-[#F5DCB3]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
+                  Pendiente
+                </span>
+</td>
+<td class="px-5 text-right">
+<span class="font-sans text-base font-extrabold text-[#0F1A2A]">$4,120</span>
+</td>
+</tr>
+<!-- Fila 3: Javier Fernández ($5,800) - Confirmada -->
+<tr class="h-16 hover:bg-[#FAF7F2] transition-colors">
+<td class="px-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#1A2A3A] text-[#C9A96E] flex items-center justify-center text-xs font-bold border border-[#C9A96E]/40">
+                    JF
+                  </div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-[#0F1A2A]">Javier Fernández</span>
+<span class="text-[11px] text-[#4A5A6A] tracking-wide">ID: #RES-8919</span>
+</div>
+</div>
+</td>
+<td class="px-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#C9A96E] text-xl">temple_buddhist</span>
+<span class="text-sm font-medium text-[#1A2A3A]">Tokio Express</span>
+</div>
+</td>
+<td class="px-5">
+<span class="text-sm text-[#4A5A6A]">22 Oct 2024</span>
+</td>
+<td class="px-5">
+<!-- Badge Confirmada -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#E8F4EC] text-[#1E5631] border border-[#C3DEC7]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1E5631]"></span>
+                  Confirmada
+                </span>
+</td>
+<td class="px-5 text-right">
+<span class="font-sans text-base font-extrabold text-[#0F1A2A]">$5,800</span>
+</td>
+</tr>
+<!-- Fila 4: Valentina Ríos ($1,890) - En Proceso -->
+<tr class="h-16 hover:bg-[#FAF7F2] transition-colors">
+<td class="px-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#4A6B8A]/15 text-[#4A6B8A] flex items-center justify-center text-xs font-bold border border-[#4A6B8A]/30">
+                    VR
+                  </div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-[#0F1A2A]">Valentina Ríos</span>
+<span class="text-[11px] text-[#4A5A6A] tracking-wide">ID: #RES-8918</span>
+</div>
+</div>
+</td>
+<td class="px-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#4A6B8A] text-xl">apartment</span>
+<span class="text-sm font-medium text-[#1A2A3A]">Nueva York City Tour</span>
+</div>
+</td>
+<td class="px-5">
+<span class="text-sm text-[#4A5A6A]">21 Oct 2024</span>
+</td>
+<td class="px-5">
+<!-- Badge En Proceso: azul acero suave con punto azul acero -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#EBF2F7] text-[#29465F] border border-[#BFD4E2]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#4A6B8A]"></span>
+                  En Proceso
+                </span>
+</td>
+<td class="px-5 text-right">
+<span class="font-sans text-base font-extrabold text-[#0F1A2A]">$1,890</span>
+</td>
+</tr>
+<!-- Fila 5: Andrés Silva ($3,200) - Completada -->
+<tr class="h-16 hover:bg-[#FAF7F2] transition-colors">
+<td class="px-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#F5F0E8] text-[#1A2A3A] flex items-center justify-center text-xs font-bold border border-[#EAE3D6]">
+                    AS
+                  </div>
+<div class="flex flex-col">
+<span class="font-bold text-sm text-[#0F1A2A]">Andrés Silva</span>
+<span class="text-[11px] text-[#4A5A6A] tracking-wide">ID: #RES-8917</span>
+</div>
+</div>
+</td>
+<td class="px-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#C9A96E] text-xl">travel</span>
+<span class="text-sm font-medium text-[#1A2A3A]">Riviera Maya Familiar</span>
+</div>
+</td>
+<td class="px-5">
+<span class="text-sm text-[#4A5A6A]">20 Oct 2024</span>
+</td>
+<td class="px-5">
+<!-- Badge Completada: perla neutro suave con punto gris grafito -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F1F3F5] text-[#4A5568] border border-[#CBD5E1]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#64748B]"></span>
+                  Completada
+                </span>
+</td>
+<td class="px-5 text-right">
+<span class="font-sans text-base font-extrabold text-[#0F1A2A]">$3,200</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between pt-5 mt-3 border-t border-[#EAE3D6] gap-3 text-xs text-[#4A5A6A] font-medium">
+<span class="">Mostrando 5 de 1,420 bitácoras de vuelo registradas</span>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-[#FAF7F2] border border-[#EAE3D6] text-[#1A2A3A] font-semibold hover:bg-[#F5F0E8] transition-colors" type="button">Anterior</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#C9A96E] text-[#1A2A3A] font-bold shadow-sm" type="button">1</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#FAF7F2] border border-[#EAE3D6] text-[#1A2A3A] font-semibold hover:bg-[#F5F0E8] transition-colors" type="button">2</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#FAF7F2] border border-[#EAE3D6] text-[#1A2A3A] font-semibold hover:bg-[#F5F0E8] transition-colors" type="button">Siguiente</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>
