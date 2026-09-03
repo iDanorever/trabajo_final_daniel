@@ -9,8 +9,6 @@ API REST desarrollada con Node.js y Express para gestionar información de viaje
 - **Node.js** + **Express** → Backend
 - **Datos mock** → Sin base de datos (estático)
 
----
-
 ## ⚙️ Cómo ejecutar el proyecto
 
 ### 1. Clonar el repositorio
