@@ -17,7 +17,7 @@ API REST desarrollada con Node.js y Express para gestionar información de viaje
 ```bash
 git clone https://github.com/iDanorever/viajes-dashboard.git
 cd viajes-dashboard
-
+```
 ## 2. Instalar dependencias
 ```
 npm install
@@ -29,6 +29,7 @@ npm install
 node server.js
 ```
 El servidor se ejecutará en: http://localhost:3000
+
 
 📋 Endpoints disponibles
 |Método	|Endpoint	|Descripción
