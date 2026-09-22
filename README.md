@@ -2,6 +2,13 @@
 ![image_alt](https://github.com/iDanorever/trabajo_final_daniel/blob/561c779033bfc6717cd206aca0dfb5ebd541bdb7/Screenshot%202026-09-22%20154811.png)
 ![image alt](https://github.com/iDanorever/trabajo_final_daniel/blob/d3f5d00156d532b48f07f46c617d47483c10e66d/Screenshot%202026-09-22%20154818.png)
 ![image alt](https://github.com/iDanorever/trabajo_final_daniel/blob/64be102b766808bebee59dd428fdc4fd81836542/Screenshot%202026-09-22%20154826.png)
+
+
+
+
+https://github.com/user-attachments/assets/305cc599-7ffa-4d5c-9799-07088ad2e28c
+
+
 # 🚀 Google Stitch - API de Viajes
 
 API REST desarrollada con Node.js y Express para gestionar información de viajes y dashboards. Este proyecto fue desarrollado como parte del curso de Desarrollo de Software en SENATI.
